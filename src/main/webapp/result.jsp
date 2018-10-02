@@ -21,6 +21,8 @@
         <div id="result">
 
             <h3>${requestScope["message"]}</h3>
+            
+            <a href="index.jsp">Voltar</a>
 
         </div>
 

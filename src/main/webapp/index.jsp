@@ -25,7 +25,9 @@
 
                 <input type="submit" value="upload" />
 
-            </form>         
+            </form>     
+            
+            <a href="baixar.jsp">Baixar</a>
 
         </div>
 

@@ -20,10 +20,7 @@
 
         <div id="result">
 
-            <h3>${requestScope["message"]}</h3>
-            
-            <a href="index.jsp">Voltar</a>
-
+            <a href="/files/text.txt" download> Download File </a>
         </div>
 
 

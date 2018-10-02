@@ -19,7 +19,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 public class FileUploadHandler extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "/home/opportunity/files";
+    private final String UPLOAD_DIRECTORY = "/opt/tomcat/apache-tomee-webprofile-7.0.2/webapps/files";
+   // private final String UPLOAD_DIRECTORY = "C:/uploads";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
