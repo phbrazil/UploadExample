@@ -16,7 +16,7 @@
 
         <div>
 
-            <h3> Choose File to Upload in Server </h3>
+            <h3> Escolha um arquivo para subir para o Servidor </h3>
 
 
             <form action="upload" method="post" enctype="multipart/form-data">
@@ -52,7 +52,7 @@
                     alert(fsize + " bites\nArquivo com tamanho aceito!");
                 }
             } else {
-                alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+                alert("Favor atualizar seu navegador, pois seu navegador atual não possui alguns atributos necessários!");
             }
         });
 
