@@ -42,18 +42,18 @@ public class FileUploadHandler extends HttpServlet {
                 }
 
                 //File uploaded successfully
-                request.setAttribute("message", "File Uploaded Successfully");
+                request.setAttribute("message", "Upload feito com Sucesso!");
 
                 insert insert = new insert();
                 insert.insert(path);
 
             } catch (Exception ex) {
-                request.setAttribute("message", "File Upload Failed due to " + ex);
+                request.setAttribute("message", "Upload falhou devido a " + ex);
             }
 
         } else {
             request.setAttribute("message",
-                    "Sorry this Servlet only handles file upload request");
+                    "Desculpe, o Servlet aceita somente upload de arquivos");
         }
 
         request.getRequestDispatcher("/result.jsp").forward(request, response);

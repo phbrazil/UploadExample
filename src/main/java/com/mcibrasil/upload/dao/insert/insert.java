@@ -30,16 +30,17 @@ public class insert {
         try {
             Connection conexao = bancoconexao.getConnection();
 
-            String sql = "INSERT INTO files (emailuser, date, file) values (?, ?, ?)";
+            String sql = "INSERT INTO files (emailuser, date, file, path) values (?, ?, ?, ?)";
             PreparedStatement statement = conexao.prepareStatement(sql);
             statement.setString(1, "paulo.bezerra@mci-group.com");
             statement.setString(2, "now()");
             InputStream inputStream = new FileInputStream(new File(filePath));
             statement.setBlob(3, inputStream);
+            statement.setString(4, filePath);
 
             int row = statement.executeUpdate();
             if (row > 0) {
-                System.out.println("A file was inserted with success.");
+                System.out.println("Arquivo inserido com sucesso.");
             }
             conexao.close();
         } catch (SQLException ex) {

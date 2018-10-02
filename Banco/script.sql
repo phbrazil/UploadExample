@@ -3,5 +3,6 @@ CREATE TABLE files (
   emailuser varchar(60) NOT NULL,
   date varchar(20) NOT NULL,
   file mediumblob,
+  path varchar(100) not null,
   PRIMARY KEY (file_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
