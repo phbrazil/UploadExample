@@ -16,14 +16,17 @@
 
         <div>
 
-            <h3> Escolha um arquivo para subir para o Servidor </h3>
+            <h3> Escolha um arquivo de até 1MB para subir para o Servidor </h3>
 
 
             <form action="upload" method="post" enctype="multipart/form-data">
 
                 <input type="file" name="file" id="i_file" required />
 
-                <input type="submit" value="Submit" id="i_submit"  />
+                <input type="submit" value="Enviar" id="i_submit"  />
+                <br>
+                
+                <input type ="text" style="border: none; color: red; width: 100%" id="filestatus" readonly>
 
             </form>     
 
@@ -46,7 +49,8 @@
 
                 if (fsize > 1048576) //do something if file size more than 1 mb (1048576)
                 {
-                    alert(fsize + " bites\nArquivo muito grande!");
+                    //alert(fsize + " bites\nArquivo muito grande!");
+                    document.getElementById('filestatus').value = "Arquivo com "+fsize+" bytes é muito grande";
                     return false;
                 } else {
                     alert(fsize + " bites\nArquivo com tamanho aceito!");
