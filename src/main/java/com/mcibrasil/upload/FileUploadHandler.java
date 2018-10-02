@@ -24,6 +24,8 @@ public class FileUploadHandler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        String path="";
 
         //process only if its multipart content
         if (ServletFileUpload.isMultipartContent(request)) {
@@ -35,17 +37,19 @@ public class FileUploadHandler extends HttpServlet {
                     if (!item.isFormField()) {
                         String name = new File(item.getName()).getName();
                         item.write(new File(UPLOAD_DIRECTORY + File.separator + name));
+                        path=UPLOAD_DIRECTORY+File.separator+name;
                     }
                 }
 
                 //File uploaded successfully
                 request.setAttribute("message", "File Uploaded Successfully");
+
+                insert insert = new insert();
+                insert.insert(path);
+
             } catch (Exception ex) {
                 request.setAttribute("message", "File Upload Failed due to " + ex);
             }
-
-            insert insert = new insert();
-            insert.insert();
 
         } else {
             request.setAttribute("message",

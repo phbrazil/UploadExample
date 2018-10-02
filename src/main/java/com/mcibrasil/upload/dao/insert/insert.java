@@ -14,17 +14,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class insert {
 
-    public void insert() {
+    public void insert(String filePath) {
+        
 
         conexao bancoconexao = new conexao();
 
-        String filePath = "C:/uploads/mci_brazil.PNG";
+        //String filePath = "C:/uploads/mci_brazil.PNG";
 
         try {
             Connection conexao = bancoconexao.getConnection();
