@@ -51,7 +51,7 @@ public class insert {
 
             }
             if (row > 0) {
-                System.out.println("Arquivo inserido com sucesso.");
+                System.out.println("Arquivo inserido no banco com sucesso.");
             }
             conexao.close();
         } catch (SQLException ex) {

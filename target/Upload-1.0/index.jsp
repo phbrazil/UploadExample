@@ -17,16 +17,16 @@
         <div>
 
             <h3> Choose File to Upload in Server </h3>
-                    
+
 
             <form action="upload" method="post" enctype="multipart/form-data">
 
-                <input type="file" name="file" required />
+                <input type="file" name="file" id="i_file" required />
 
-                <input type="submit" value="upload" />
+                <input type="submit" value="Submit" id="i_submit"  />
 
             </form>     
-            
+
             <a href="baixar.jsp">Baixar</a>
 
         </div>
@@ -34,5 +34,27 @@
 
 
     </body>
+    <script src="js/jquery.js"></script>
 
+    <script>
+        $('#i_submit').click(function () {
+            //check whether browser fully supports all File API
+            if (window.File && window.FileReader && window.FileList && window.Blob)
+            {
+                //get the file size and file type from file input field
+                var fsize = $('#i_file')[0].files[0].size;
+
+                if (fsize > 1048576) //do something if file size more than 1 mb (1048576)
+                {
+                    alert(fsize + " bites\nArquivo muito grande!");
+                    return false;
+                } else {
+                    alert(fsize + " bites\nArquivo com tamanho aceito!");
+                }
+            } else {
+                alert("Please upgrade your browser, because your current browser lacks some new features we need!");
+            }
+        });
+
+    </script>
 </html>
