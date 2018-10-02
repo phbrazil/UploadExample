@@ -1,1 +1,3 @@
+com\mcibrasil\upload\dao\insert\conexao.class
+com\mcibrasil\upload\dao\insert\insert.class
 com\mcibrasil\upload\FileUploadHandler.class
