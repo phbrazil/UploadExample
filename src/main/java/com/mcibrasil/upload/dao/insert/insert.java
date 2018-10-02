@@ -15,18 +15,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class insert {
 
-    public void insert(String filePath) {
+    public int insert(String filePath) {
         
-        System.out.println(filePath);
 
+        int lastid = 0;
         conexao bancoconexao = new conexao();
 
         //String filePath = "C:/uploads/mci_brazil.PNG";
-
         try {
             Connection conexao = bancoconexao.getConnection();
 
@@ -39,6 +39,17 @@ public class insert {
             statement.setString(4, filePath);
 
             int row = statement.executeUpdate();
+            java.sql.Statement st = conexao.createStatement();
+
+            String score = "SELECT LAST_INSERT_ID() as file_id";
+
+            ResultSet result = st.executeQuery(score);
+
+            while (result.next()) {
+
+                lastid = result.getInt("file_id");
+
+            }
             if (row > 0) {
                 System.out.println("Arquivo inserido com sucesso.");
             }
@@ -48,5 +59,6 @@ public class insert {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return lastid;
     }
 }
