@@ -29,7 +29,6 @@ public class conexao {
      */
     public Connection getConnection() throws SQLException {
         
-        System.out.println("entrei na conexao");
 
         try {
             Class.forName(driver);
