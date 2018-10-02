@@ -21,6 +21,7 @@ public class insert {
 
     public void insert(String filePath) {
         
+        System.out.println(filePath);
 
         conexao bancoconexao = new conexao();
 

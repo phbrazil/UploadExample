@@ -19,7 +19,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 public class FileUploadHandler extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:/uploads";
+    private final String UPLOAD_DIRECTORY = "/home/opportunity/files";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
